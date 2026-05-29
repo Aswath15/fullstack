@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Livvic', sans-serif;
+}
+
+body {
+  @apply bg-gray-50;
+}
+
+/* Custom animations */
+@keyframes pulse-custom {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-custom {
+  animation: pulse-custom 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes spin-custom {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-custom {
+  animation: spin-custom 1s linear infinite;
+}
+
+/* Loading skeleton */
+.skeleton {
+  @apply bg-gray-300 animate-pulse-custom rounded;
+}
+
+/* Upload zone hover effect */
+.upload-zone:hover {
+  @apply bg-blue-50 border-blue-400;
+  transition: all 0.3s ease;
+}
+
+.upload-zone.drag-over {
+  @apply bg-blue-100 border-2 border-blue-500;
+}
